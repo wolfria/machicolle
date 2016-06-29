@@ -1,0 +1,14 @@
+<ons-page>
+<ons-sliding-menu var="app.slidingMenu" menu-page="menu.html" side="left" type="push" max-slide-distance="200px" swipeable="false">
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="right">
+            <ons-toolbar-button><ons-icon ng-click="myNavigator.pushPage('toko.html')" icon="ion-plus" fixed-width="false" style="vertical-align: -4px;"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center">machicolle</div>
+    </ons-toolbar> 
+
+    <p>近くの写真</p>
+</ons-page>
