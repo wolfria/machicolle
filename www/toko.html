@@ -6,7 +6,12 @@
 
     <div style="text-align: center">
         <br/>
-            <a class="button--large" onclick="snapPicture()">Take picture</a>
+            <div class="no-border-button tappable" style="position : relative">
+                ＋ 画像をアップロードする
+                <form>
+                <input type="file" id="image-file" name="image" style="opacity: 0.0; position : absolute; left : 0; right : 0; top : 0; bottom : 0; z-index : 20;" />
+            </form>
+            </div>
             <input id="name" type="text" class="text-input" ng-model="textname" placeholder="タイトルを入力" style="width: 90%">
             <textarea id="memo" type="text" class="text-input" ng-model="textmemo" placeholder="おすすめポイントを入力" style="width: 90%; height: 100px;">
             </textarea>
@@ -16,5 +21,7 @@
             onclick="saveSpot()">
             スポットを保存
         </ons-button>
+            <a class="button--large" onclick="snapPicture()">Take picture and save</a>
+    <img id="showImage" width="280" height="350"/>
     </div>
 </ons-page>
