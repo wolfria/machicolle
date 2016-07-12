@@ -133,15 +133,10 @@ function search(current){
             //データ内オブジェクトを作成
             var location = point.get("geo");
             var myLatlng = new google.maps.LatLng(location.latitude,location.longitude);
-            var filenamedayo = point.get("fileName");
 
-            //NCMBサーバーからファイルをダウンロード
-            var getFile =  new NCMB.File(filenamedayo);
-            var image_canvas = document.getElementById("showImage");
-            getFile.fetchImgSource(image_canvas);
 
             //店舗名、位置情報、Google mapオブジェクトを指定してマーカー作成メソッドを呼び出し
-            markToMap(point.get("name"),point.get("memo"), myLatlng, map);
+            markToMap(point.get("name"),point.get("memo"),point.get("fileName"), myLatlng, map);
         }
         },
         error: function(error) {
@@ -193,7 +188,7 @@ function saveSpot(){
 　　}
 　　
     //マーカーを作成
-　　function markToMap(name , memo , position, map){
+　　function markToMap(name,memo,filename,position, map){
     var marker = new google.maps.Marker({
         position: position,
         title:name,
@@ -203,9 +198,9 @@ function saveSpot(){
     google.maps.event.addListener(marker, 'click', function() {
         var infoWindowOption = {
             position : position, //座標
-            content : "<div id='infoWindow'>" + marker.title + "<br>" +
-              "<img id='showImage'/><br>" +
-              "<span>" + memo +"</span><div>"
+            content : "<div id='infoWindow'>" + '<p id="markertitle">' + marker.title + "</p>" +
+              '<img id="markerimg" src="' + filename + '" width="180px"/>' +
+              '<p id="markermemo">' + memo +'</p></div>'
         };
         var infowindow = new google.maps.InfoWindow(infoWindowOption);
         infowindow.open(map,marker);

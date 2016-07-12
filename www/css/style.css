@@ -5,3 +5,25 @@
     width:100%; 
     bottom:0px
 }
+
+#infoWindow{
+    width: 180px;
+}
+
+#markertitle{
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+#markerimg{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+#markermemo{
+    margin: 0px;
+    margin-top: 7px;
+    padding: 0px;
+}
